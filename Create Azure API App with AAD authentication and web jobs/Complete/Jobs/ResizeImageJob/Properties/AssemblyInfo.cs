@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ResizeImage WebJob")]
-[assembly: AssemblyDescription("Web job is triggered by message in Azure queue and convert image to its thumbnail. Data is obtaibed from database.")]
+[assembly: AssemblyDescription("Web job is triggered by messages in Azure queue and converts image to its thumbnail. Data is obtain from database.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Tutorial \'Create Azure API App with AAD authentication and web jobs\'")]

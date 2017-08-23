@@ -10,18 +10,18 @@ using Models;
 
 namespace ResizeImageJob
 {
-    public class Functions
-    {
-        public static void GenerateThumbnail(
-        [QueueTrigger(AzureConfig.ThumbnailQueueName)] BlobInformation blobInfo,
-        [Blob("images/{BlobName}", FileAccess.Read)] Stream input,
-        [Blob("images/{BlobNameWithoutExtension}_thumbnail.jpg")] CloudBlockBlob outputBlob)
-        {
-            using (Stream output = outputBlob.OpenWrite())
-            {
-                ConvertImageToThumbnailJpeg(input, output);
-                outputBlob.Properties.ContentType = "image/jpeg";
-            }
+	public class Functions
+	{
+		public static void GenerateThumbnail(
+			[QueueTrigger(AzureConfig.ThumbnailQueueName)] BlobInformation blobInfo,
+			[Blob("images/{BlobName}", FileAccess.Read)] Stream input,
+			[Blob("images/{BlobNameWithoutExtension}_thumbnail.jpg")] CloudBlockBlob outputBlob)
+		{
+			using (Stream output = outputBlob.OpenWrite())
+			{
+				ConvertImageToThumbnailJpeg(input, output);
+				outputBlob.Properties.ContentType = "image/jpeg";
+			}
 
 			// Entity Framework context class is not thread-safe, so it must
 			// be instantiated and disposed within the function.
@@ -38,43 +38,43 @@ namespace ResizeImageJob
 			}
 		}
 
-        public static void ConvertImageToThumbnailJpeg(Stream input, Stream output)
-        {
-            const int thumbnailsize = 80;
-            int width;
-            int height;
-            var originalImage = new Bitmap(input);
+		public static void ConvertImageToThumbnailJpeg(Stream input, Stream output)
+		{
+			const int thumbnailsize = 80;
+			int width;
+			int height;
+			var originalImage = new Bitmap(input);
 
-            if (originalImage.Width > originalImage.Height)
-            {
-                width = thumbnailsize;
-                height = thumbnailsize * originalImage.Height / originalImage.Width;
-            }
-            else
-            {
-                height = thumbnailsize;
-                width = thumbnailsize * originalImage.Width / originalImage.Height;
-            }
+			if (originalImage.Width > originalImage.Height)
+			{
+				width = thumbnailsize;
+				height = thumbnailsize * originalImage.Height / originalImage.Width;
+			}
+			else
+			{
+				height = thumbnailsize;
+				width = thumbnailsize * originalImage.Width / originalImage.Height;
+			}
 
-            Bitmap thumbnailImage = null;
-            try
-            {
-                thumbnailImage = new Bitmap(width, height);
+			Bitmap thumbnailImage = null;
+			try
+			{
+				thumbnailImage = new Bitmap(width, height);
 
-                using (var graphics = Graphics.FromImage(thumbnailImage))
-                {
-                    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                    graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                    graphics.DrawImage(originalImage, 0, 0, width, height);
-                }
+				using (var graphics = Graphics.FromImage(thumbnailImage))
+				{
+					graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+					graphics.SmoothingMode = SmoothingMode.AntiAlias;
+					graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+					graphics.DrawImage(originalImage, 0, 0, width, height);
+				}
 
-                thumbnailImage.Save(output, ImageFormat.Jpeg);
-            }
-            finally
-            {
-	            thumbnailImage?.Dispose();
-            }
-        }
-    }
+				thumbnailImage.Save(output, ImageFormat.Jpeg);
+			}
+			finally
+			{
+				thumbnailImage?.Dispose();
+			}
+		}
+	}
 }

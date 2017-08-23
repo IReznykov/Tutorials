@@ -23,9 +23,9 @@ namespace ResizeImageJobEx
 		private static readonly ILogger Logger = new ConsoleLogger();
 
 		public static async Task GenerateThumbnailAsync(
-		[QueueTrigger(AzureConfig.ThumbnailQueueName)] BlobInformation blobInfo,
-		[Blob("images/{BlobName}", FileAccess.Read)] Stream input,
-		[Blob("images/{BlobNameWithoutExtension}_thumbnail.jpg")] CloudBlockBlob outputBlob,
+			[QueueTrigger(AzureConfig.ThumbnailQueueName)] BlobInformation blobInfo,
+			[Blob("images/{BlobName}", FileAccess.Read)] Stream input,
+			[Blob("images/{BlobNameWithoutExtension}_thumbnail.jpg")] CloudBlockBlob outputBlob,
 			TextWriter textWriter,
 			CancellationToken cancellationToken)
 		{
