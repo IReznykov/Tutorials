@@ -1,0 +1,38 @@
+﻿@using ClientApp.DataApi.Models
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2>Workshop</h2>
+    <h3 class="lead">Create Azure API App with AAD authentication and web jobs</h3>
+    <p>
+        <a href="https://ireznykov.com/2017/08/03/training-create-api-app-with-authentication-and-web-jobs/" class="btn btn-primary btn-lg">Learn more &raquo;</a>
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Choose ad's category</h2>
+        <ul>
+            <li>@Html.ActionLink("Cars", "Index", "Ads", new { Id = 1 }, null)</li>
+            <li>@Html.ActionLink("Hardware", "Index", "Ads", new { Id = 2 }, null)</li>
+            <li>@Html.ActionLink("Furniture", "Index", "Ads", new { Id = 3 }, null)</li>
+            <li>@Html.ActionLink("Appliance", "Index", "Ads", new { Id = 4 }, null)</li>
+            <li>@Html.ActionLink("All", "Index", "Ads", null, null)</li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h2>Or create a new ad</h2>
+        <p>
+            <a class="btn btn-default" href="@Url.Action("Create", "Ads")">Create an Ad</a>
+        </p>
+    </div>
+    @*<div class="col-md-2">
+            <h2>About author</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p>
+                <a class="btn btn-default" href="https://ireznykov.com/about">Learn more &raquo;</a>
+            </p>
+        </div>*@
+</div>

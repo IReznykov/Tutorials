@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<div class="jumbotron">
+    <h2>@ViewBag.Title</h2>
+    <p>This site is Client Application for Data API app that are implemented for training "Create Api App with authentication and web jobs", presented at <a href="https://azureday.net/workshops">Azure Day 2017</a> workshop. The training is based on tutorial written for <a href="https://svitla.com/blog">Svitla blog</a>.</p>
+    @*<h3>@ViewBag.Message</h3>*@
+</div>
+
+<div>
+    <h2 align="center">Workshop Agenda</h2>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <ol type="1">
+            <li>
+                Introduction:
+                <ol type="a">
+                    <li>Acquaintance;</li>
+                    <li>Course overview;</li>
+                    <li>Set up environment, check required software.</li>
+                </ol>
+            </li>
+            <li>
+                Prepare environment:
+                <ol type="a">
+                    <li value="1">Create Azure resource group;</li>
+                    <li>Create Azure storage;</li>
+                    <li>Create App Service plan;</li>
+                    <li>Check AAD.</li>
+                </ol>
+            </li>
+            <li>
+                Data source and model library:
+                <ol type="a">
+                    <li value="1">Create Azure SQL server;</li>
+                    <li>Create database project;</li>
+                    <li>Deploy to Azure SQL database as data-tier application;</li>
+                    <li>Connect to SQL Azure from Visual Studio, check data;</li>
+                    <li>Create class library;</li>
+                    <li>Add data models with Entity Framework.</li>
+                </ol>
+            </li>
+            <li>
+                API app - basic:
+                <ol type="a">
+                    <li>Overview;</li>
+                    <li>Types of web apps, app plan, pricing;</li>
+                    <li>Create App plan and API app;</li>
+                    <li>Tune swagger package;</li>
+                    <li>Launch local instance, deploy to Azure.</li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+    <div class="col-md-4">
+        <ol type="1">
+            <li value="5">
+                API app - intermediate:
+                <ol type="a">
+                    <li>Add models from SQL database;</li>
+                    <li>Create new controllers;</li>
+                    <li>Deploy to Azure;</li>
+                    <li>Create Asp.Net MVC site as consumer;</li>
+                    <li>Add Rest service;</li>
+                    <li>Deploy Asp.Net MVC site to Azure;</li>
+                    <li>Check Rest API.</li>
+                </ol>
+            </li>
+            <li>
+                Web jobs - basics:
+                <ol type="a">
+                    <li value="1">Overview;</li>
+                    <li>Create console application that convert images;</li>
+                    <li>Update application to convert image in storage;</li>
+                    <li>Discuss possible triggers;</li>
+                    <li>Convert console application to web job;</li>
+                    <li>Deploy to API app to Azure;</li>
+                    <li>Check web job.</li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+    <div class="col-md-4">
+        <ol type="1">
+            <li value="7">
+                Web jobs - intermediate:
+                <ol type="a">
+                    <li value="1">Add logging;</li>
+                    <li>Add async methods;</li>
+                    <li>Debug web jobs.</li>
+                </ol>
+            </li>
+            <li>
+                API app - advanced:
+                <ol type="a">
+                    <li value="1">Add authentication with Easy Auth;</li>
+                    <li>Create AAD application;</li>
+                    <li>Add authorize attribute.</li>
+                </ol>
+            </li>
+            <li>
+                Web jobs - advanced:
+                <ol type="a">
+                    <li value="1">Create new web job with trigger;</li>
+                    <li>Consume API app from web job;</li>
+                    <li>Create AAD application for web job;</li>
+                    <li>Check results.</li>
+                </ol>
+            </li>
+            <li>Conclusions.</li>
+        </ol>
+    </div>
+</div>
