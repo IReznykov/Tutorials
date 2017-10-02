@@ -77,8 +77,4 @@
   <ItemGroup>
     <PostDeploy Include="PostDeployment\Script.PostDeployment.sql" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Database.publish.xml" />
-    <None Include="Publish\Azure.publish.xml" />
-  </ItemGroup>
 </Project>
