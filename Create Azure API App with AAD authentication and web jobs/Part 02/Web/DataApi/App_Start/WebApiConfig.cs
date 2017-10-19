@@ -6,8 +6,14 @@ using DataApi.Attributes;
 
 namespace DataApi
 {
+	/// <summary>
+	/// Configure Web Api configuration.
+	/// </summary>
 	public static class WebApiConfig
 	{
+		/// <summary>
+		/// Method is called from starting application method.
+		/// </summary>
 		public static void Register(HttpConfiguration config)
 		{
 			// Web API configuration and services

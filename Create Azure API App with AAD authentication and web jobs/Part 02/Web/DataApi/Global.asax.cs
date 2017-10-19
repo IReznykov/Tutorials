@@ -7,8 +7,14 @@ using System.Web.Routing;
 
 namespace DataApi
 {
+	/// <summary>
+	/// Main application class.
+	/// </summary>
 	public class WebApiApplication : System.Web.HttpApplication
 	{
+		/// <summary>
+		/// Start method.
+		/// </summary>
 		protected void Application_Start()
 		{
 			GlobalConfiguration.Configure(WebApiConfig.Register);
