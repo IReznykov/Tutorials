@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ClientApp")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Web application, that allows view, create and edit ads with images.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ClientApp")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyProduct("Tutorial \'Create Azure API App with AAD authentication and web jobs\'")]
+[assembly: AssemblyCopyright("Copyright © 2017 Illya Reznykov")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
